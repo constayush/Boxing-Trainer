@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html ,body {
+
+
+    background-image:url(https://media1.tenor.com/m/a_8cco_fMuQAAAAC/hajime-no-ippo-boxing.gif);
+background-blend-mode:multiply;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boxingH1{
+    font-family: 'Protest Revolution', sans-serif;
+}
+
+.punchBtn{
+
+    background-color: yellow;
+ width: 8rem;
+
+}
