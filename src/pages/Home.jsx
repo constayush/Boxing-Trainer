@@ -1,34 +1,72 @@
 import React from 'react'
 import Header from '../Header'
-
+import { useState } from 'react';
 let homebg = '../../public/homeVid.gif'
 function Home() {
+
+    let [item, setItem] = useState([])
+
+    function handleClick(e) { setItem(prv => [...prv, e.target.innerText]) }
+
     return (
         <>
-            <Header />
-            <div className='flex m-4 gap-4 items-center justify-center'>
+             <div className='boxingH1 w-screen flex h-fit justify-center items-center text-[5rem] md:text-[12rem] '><h1>Go Boxin!</h1></div>
+             {/* ///////////////////////// */}
+            <div className='w-screen    flex flex-col  items-center justify-center '>
 
-                <div className='w-screen md:w-[50vw] h-[50vh] bg-[red] p-7 flex flex-col items-center justify-center'>
+                <div className='flex flex-col items-center justify-center'>
+                    <h1 className='text-[3rem] Heading'>Choose your combination</h1>
 
-                    <h1 className='text-[3rem]'>Choose your combination</h1>
-                    <button className='m-2 punchBtn'>Jab</button>
-                    <button className='m-2 punchBtn'>Cross</button>
-                    <button className='m-2 punchBtn'>Hook</button>
-                    <button className='m-2 punchBtn'>Slip</button>
-                    
+                    <div className='flex'>
+                        <button onClick={handleClick} className='m-2 button-86'>Jab</button>
+                        <button onClick={handleClick} className='m-2 button-86'>Cross</button>
+                        <button onClick={handleClick} className='m-2 button-86'>Hook</button>
+                        <button onClick={handleClick} className='m-2 button-86'>Slip</button>
+                    </div>
                 </div>
 
+                <div className='combiList w-[60vw]'> 
 
-                <div className='w-screen md:w-[50vw] h-[50vh] bg-[red]'>
-        
-        <h1 className='text-[3rem] m-10'>Your Combination</h1>
+                <ul className='flex'>
+
+                {item.map((item, index) => <li className='combiItem' key={index}><div className='itemElem flex items-center justify-center rounded-lg'>{index}. {item}</div></li>)}
+
+                </ul>
+                
                 </div>
 
             </div>
+            {/* ////////////////////// */}
 
-
+        <div className=' w-screen flex justify-center items-center mt-[5vh]'><button className='button-49'>START</button></div>
         </>
     )
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+};
+
+
+
+
+
 
 export default Home
+
+
+
+
+
+
+
