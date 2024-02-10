@@ -31,7 +31,7 @@ function Home() {
 
                         <ul className='flex'>
 
-                            {item.map((item, index) => <li className='combiItem' key={index}><div className='itemElem flex items-center justify-center rounded-lg'>{index}. {item}</div></li>)}
+                            {item.map((item, index) => <li className='combiItem' key={index}><div className='itemElem flex items-center justify-center rounded-lg'>{index+1}. {item}</div></li>)}
 
                         </ul>
 
