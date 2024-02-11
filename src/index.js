@@ -1,8 +1,15 @@
 import React from "react";
 
 import  {ReactDOM, createRoot} from "react-dom";
-
+import { Route,Routes,BrowserRouter } from "react-router-dom";
 import App from "./App";
+import Play from "./pages/Play";
+
+createRoot(document.querySelector('#root')).render(<BrowserRouter>
 
 
-createRoot(document.querySelector('#root')).render(<App/>);
+    <Routes>
+        <Route path='/' element=<App/> />
+        <Route path='/play' element=<Play/> />
+    </Routes>
+</BrowserRouter>);

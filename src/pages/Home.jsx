@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 let homebg = '../../public/homeVid.gif'
 function Home() {
 
@@ -40,7 +41,7 @@ function Home() {
                 </div>
                 {/* ////////////////////// */}
 
-                <div className=' w-screen flex justify-center items-center mt-[5vh]'><button className='button-49'>START</button></div>
+            <Link to='/play'><div className=' w-screen flex justify-center items-center mt-[5vh]'><button className='button-49'>START</button></div></Link> 
             </div>   </>
     )
 
