@@ -1,6 +1,6 @@
 import React from "react";
 
-import  {ReactDOM, createRoot} from "react-dom";
+import  {ReactDOM, createRoot} from "react-dom/client";
 import { Route,Routes,BrowserRouter } from "react-router-dom";
 import App from "./App";
 import Play from "./pages/Play";

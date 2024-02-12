@@ -3,11 +3,30 @@ import Header from '../Header'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 let homebg = '../../public/homeVid.gif'
-function Home() {
+import Play from './Play';
 
+
+function Home() {
+    let combo =[];
     let [item, setItem] = useState([])
 
-    function handleClick(e) { setItem(prv => [...prv, e.target.innerText]) }
+    function handleClick(e) { 
+        
+        
+        
+        
+        
+        
+        setItem(prv => [...prv, e.target.innerText])
+        
+    
+    
+    }
+
+   
+    {combo.push(item)}
+   
+<Play combo={item}/>
 
     return (
         <>
@@ -39,12 +58,14 @@ function Home() {
                     </div>
 
                 </div>
-                {/* ////////////////////// */}
+    
 
             <Link to='/play'><div className=' w-screen flex justify-center items-center mt-[5vh]'><button className='button-49'>START</button></div></Link> 
             </div>   </>
-    )
 
+
+
+    )
 
 
 
