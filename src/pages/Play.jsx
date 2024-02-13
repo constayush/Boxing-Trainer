@@ -1,21 +1,31 @@
 import React from 'react'
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom';
+
+function Play() {
 
 
-function Play(props) {
+  let loco =   useLocation()
 
-    console.log(props)
 
-    let [arr, setArr] = useState(['cross', 'slip', 'hook', 'uppercut', 'jab'])
-    let time = 500;
+console.log([...loco.state.combo])
+
+
+
+
+
+
+
+    let [arr, setArr] = useState([...loco.state.combo]);
+    let time = 1000;
 
     function handleClick() {
 
         for (let a = 0; a < arr.length; a++) {
             let punchName = arr[a]
 
-            if (punchName == 'cross') {
-
+            if (punchName == 'Cross') {
+                console.log(arr)
 
                 let audioUrl = require(`url:../../public/cross.mp3`);
                 let sound = new Audio(audioUrl);
@@ -25,7 +35,7 @@ function Play(props) {
 
 
             }
-            else if (punchName == 'jab') {
+            else if (punchName == 'Jab') {
 
 
                 let audioUrl = require(`url:../../public/jab.mp3`);
@@ -34,7 +44,7 @@ function Play(props) {
                     sound.play()
                 }, a * time);
             }
-            else if (punchName == 'hook') {
+            else if (punchName == 'Hook') {
 
 
                 let audioUrl = require(`url:../../public/hook.mp3`);
@@ -43,7 +53,7 @@ function Play(props) {
                     sound.play()
                 }, a * time);
             }
-            else if (punchName == 'uppercut') {
+            else if (punchName == 'Uppercut') {
 
 
                 let audioUrl = require(`url:../../public/uppercut.mp3`);
@@ -53,7 +63,7 @@ function Play(props) {
                 }, a * time);
             }
 
-            else if (punchName == 'slip') {
+            else if (punchName == 'Slip') {
 
 
                 let audioUrl = require(`url:../../public/slip.mp3`);
@@ -63,10 +73,33 @@ function Play(props) {
                 }, a * time);
             }
         }
-    }
+    } 
 
     return (
-        <div onClick={handleClick}>Play</div>
+        <div className='PLAY w-screen h-screen flex items-center justify-center ' >
+
+
+
+
+
+
+
+
+
+<button onClick={handleClick}>GET IT!</button>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     )
 }
 

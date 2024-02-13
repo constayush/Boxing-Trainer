@@ -6,10 +6,7 @@
 html ,body {
 
 overflow-x: hidden;
-    background-image:url(https://media1.tenor.com/m/ayNnvjM1ozIAAAAC/anime.gif);
-background-blend-mode:multiply;
-    background-repeat: no-repeat;
-    background-size:cover;
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -250,4 +247,19 @@ width:100px;
     height: 80px;
     line-height: 88px;
   }
+}
+
+
+.HOME{
+  background-image:url(https://media1.tenor.com/m/ayNnvjM1ozIAAAAC/anime.gif);
+background-blend-mode:multiply;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.PLAY{
+  background-image:url(https://media1.tenor.com/m/a_8cco_fMuQAAAAC/hajime-no-ippo-boxing.gif);
+    background-blend-mode:multiply;
+        background-repeat: no-repeat;
+        background-size:cover;
 }

@@ -1,36 +1,27 @@
 import React from 'react'
-import Header from '../Header'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-let homebg = '../../public/homeVid.gif'
-import Play from './Play';
-
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
-    let combo =[];
+    
     let [item, setItem] = useState([])
 
-    function handleClick(e) { 
-        
-        
-        
-        
-        
-        
-        setItem(prv => [...prv, e.target.innerText])
-        
-    
-    
-    }
 
-   
-    {combo.push(item)}
-   
-<Play combo={item}/>
+    let Navigate = useNavigate();
+
+
+    function handleClick(e) { setItem(prv => [...prv, e.target.innerText]) }
+
+
+    function handlePlayClick() { Navigate('/play', { state: { combo: item } }); }
+
+
+
 
     return (
         <>
-            <div className='p-4 h-[100vh]'>
+            <div className=' HOME p-4 h-[100vh] w-screen'>
                 <div className='boxingH1 w-screen flex h-fit justify-center items-center text-[5rem] md:text-[12rem] '><h1>Go Boxin!</h1></div>
                 {/* ///////////////////////// */}
                 <div className='w-screen    flex flex-col  items-center justify-center '>
@@ -51,20 +42,20 @@ function Home() {
 
                         <ul className='flex'>
 
-                            {item.map((item, index) => <li className='combiItem' key={index}><div className='itemElem flex items-center justify-center rounded-lg'>{index+1}. {item}</div></li>)}
+                            {item.map((item, index) => <li className='combiItem' key={index}><div className='itemElem flex items-center justify-center rounded-lg'>{index + 1}. {item}</div></li>)}
 
                         </ul>
 
                     </div>
 
                 </div>
-    
 
-            <Link to='/play'><div className=' w-screen flex justify-center items-center mt-[5vh]'><button className='button-49'>START</button></div></Link> 
-            </div>   </>
-
+                <div className=' w-screen flex justify-center items-center mt-[5vh]'><button onClick={handlePlayClick} className='button-49'><Link to='/play'>START</Link></button></div>
+            </div>
 
 
+
+        </>
     )
 
 
