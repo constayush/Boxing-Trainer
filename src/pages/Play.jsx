@@ -7,16 +7,16 @@ function Play() {
 
   let loco =   useLocation()
 
-
-console.log([...loco.state.combo])
-
+  let data = loco.state.combo ?  "error" : loco.state.combo;
 
 
 
 
 
 
-    let [arr, setArr] = useState([...loco.state.combo]);
+
+
+    let [arr, setArr] = useState([loco.state.combo]);
     let time = 1000;
 
     function handleClick() {
