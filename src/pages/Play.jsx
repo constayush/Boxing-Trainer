@@ -5,23 +5,27 @@ import { useLocation } from 'react-router-dom';
 function Play() {
 
 
-  let loco =   useLocation()
-
-  let data = loco.state.combo ?  "error" : loco.state.combo;
+    let loco = useLocation()
 
 
 
 
+let dur =loco.state.dur
+let time =loco.state.time
+
+  
 
 
+    let [arr, setArr] = useState([...loco.state.combo]);
 
-
-    let [arr, setArr] = useState([loco.state.combo]);
-    let time = 1000;
 
     function handleClick() {
-
+        console.log(dur)
+        console.log(arr)
         for (let a = 0; a < arr.length; a++) {
+
+            console.log(arr[a])
+
             let punchName = arr[a]
 
             if (punchName == 'Cross') {
@@ -31,7 +35,7 @@ function Play() {
                 let sound = new Audio(audioUrl);
                 setTimeout(() => {
                     sound.play()
-                }, a * time);
+                }, a * dur);
 
 
             }
@@ -42,7 +46,7 @@ function Play() {
                 let sound = new Audio(audioUrl);
                 setTimeout(() => {
                     sound.play()
-                }, a * time);
+                }, a * dur);
             }
             else if (punchName == 'Hook') {
 
@@ -51,7 +55,7 @@ function Play() {
                 let sound = new Audio(audioUrl);
                 setTimeout(() => {
                     sound.play()
-                }, a * time);
+                }, a * dur);
             }
             else if (punchName == 'Uppercut') {
 
@@ -60,7 +64,7 @@ function Play() {
                 let sound = new Audio(audioUrl);
                 setTimeout(() => {
                     sound.play()
-                }, a * time);
+                }, a * dur);
             }
 
             else if (punchName == 'Slip') {
@@ -70,33 +74,15 @@ function Play() {
                 let sound = new Audio(audioUrl);
                 setTimeout(() => {
                     sound.play()
-                }, a * time);
+                }, a * dur);
             }
         }
-    } 
+    }
 
     return (
-        <div className='PLAY w-screen h-screen flex items-center justify-center ' >
+        <div className='PLAY w-screen h-screen flex flex-col items-center justify-center ' >
 
-
-
-
-
-
-
-
-
-<button onClick={handleClick}>GET IT!</button>
-
-
-
-
-
-
-
-
-
-
+            <button onClick={handleClick}>GET IT!</button>
 
 
         </div>

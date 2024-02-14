@@ -15,7 +15,7 @@ overflow-x: hidden;
 .boxingH1{
     font-family: 'Orbitron', sans-serif;
 letter-spacing: 1.25rem;
-color: rgb(24, 23, 23);
+color: rgb(255, 0, 0);
 }
 
 .punchBtn{
@@ -262,4 +262,17 @@ background-blend-mode:multiply;
     background-blend-mode:multiply;
         background-repeat: no-repeat;
         background-size:cover;
+}
+
+.playH1{
+
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: .25rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+}
+
+.playIn{
+  color: rgb(0, 0, 0);
+  border: #ffffff 1px solid;
 }
