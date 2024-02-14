@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+// import DisplayPunch from '../ui/DisplayPunch';
 function Play() {
 
 
@@ -10,21 +11,25 @@ function Play() {
 
 
 
-let dur =loco.state.dur
-let time =loco.state.time
+    let dur = loco.state.dur
+    let time = loco.state.time
 
-  
+
 
 
     let [arr, setArr] = useState([...loco.state.combo]);
 
-
-    function handleClick() {
-        console.log(dur)
-        console.log(arr)
+    function handleClick() { 
+    
+     start();
+                
+    
+    }
+    function start() {
+        
         for (let a = 0; a < arr.length; a++) {
 
-            console.log(arr[a])
+         
 
             let punchName = arr[a]
 
@@ -79,14 +84,21 @@ let time =loco.state.time
         }
     }
 
-    return (
-        <div className='PLAY w-screen h-screen flex flex-col items-center justify-center ' >
 
-            <button onClick={handleClick}>GET IT!</button>
 
+
+    return (<>
+        <div className='PLAY w-screen h-fit flex flex-col  ' >
+           
+            <div className='w-screen h-[10vh] flex justify-start items-start'> <Link to='/'><button className='btn41-43 btn-43 m-[2rem]'>back to configs</button></Link></div>
+           <div className='w-screen h-[90vh] flex justify-center items-center'><button className='btn41-43 btn-43' onClick={handleClick}>GET IT!</button></div>
 
         </div>
-    )
+
+
+
+
+    </>)
 }
 
 export default Play
