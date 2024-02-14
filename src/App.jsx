@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import Play from './pages/Play'
-import { Route,Routes,BrowserRouter } from '../node_modules/react-router-dom/dist/react-router-dom.development'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 function App() {
   return (
     <>
